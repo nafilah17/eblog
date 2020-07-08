@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
+
+	protected $table = "article";
+
+    public function category(){
+    	return $this->hasOne('App\Category');
+    }
 }

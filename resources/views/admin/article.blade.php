@@ -102,7 +102,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <th>Id</th>
                           <th>Author</th>
                           <th>Category</th>
-                          <th>Title</th>
                           <th>Content</th>
                           <th>Created_at</th>
                           <th>Update_at</th>
@@ -110,18 +109,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </tr>
                       </thead>
                       <tbody>
-                     @foreach ($a_articles as $a)
+                     @foreach ($article as $a)
                         <tr>
                           <td>{{ $a->id }}</td>
                           <td>{{ $a->author }}</td>
-                          <td>{{ $a->a_categories->name }}</td>
-                          <td>{{ $a->title }}</td>
+                          <td>{{ $a->category['name'] }}</td>
                           <td>{{substr( $a->content,0,150) }}</td>
                           <td>{{ $a->created_at }}</td>
                           <td>{{ $a->updated_at }}</td>
                           <td>
-                            <a href="/a_articles/edit/{{ $a->id }}">Edit</a>
-						                <a href="/a_articles/delete/{{ $a->id }}">Delete</a>
+                            <a href="/article/edit/{{ $a->id }}">Edit</a>
+						                <a href="/article/delete/{{ $a->id }}">Delete</a>
                           </td>
                         </tr>
                      @endforeach
@@ -137,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div><!-- /.container-fluid -->
 
      
- {{ $a_articles->links() }}
+
   </div>
   <!-- /.content -->
 </div>
