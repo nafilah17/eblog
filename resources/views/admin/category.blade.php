@@ -89,14 +89,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </tr>
                       </thead>
                       <tbody>
-                     @foreach ($a_categories as $c)
+                     @foreach ($category as $c)
                         <tr>
                           <td>{{ $c->id }}</td>
                           <td>{{ $c->name }}</td>
                           
                           <td>
-                            <a href="/a_categories/edit/{{ $c->id }}">Edit</a>
-						                <a href="/a_categories/delete/{{ $c->id }}">Delete</a>
+                            <a href="/category/edit/{{ $c->id }}">Edit</a>
+						                <a href="/category/delete/{{ $c->id }}">Delete</a>
                           </td>
                         </tr>
                      @endforeach
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div><!-- /.container-fluid -->
 
      
- {{ $a_categories->links() }}
+ 
   </div>
   <!-- /.content -->
 </div>

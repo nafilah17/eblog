@@ -10,7 +10,8 @@ class ArticleController extends Controller
 
 {
     public function index(){
-    	$article = Article::all();
+    	$article = Article::with('category')->get();
+    	// dd($article);
     	return view('admin/article', ['article' => $article]);
     }
 }
